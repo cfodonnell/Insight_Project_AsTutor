@@ -1,0 +1,8 @@
+
+
+def get_ids(url):
+    if url.split('/')[-2]:
+        tut_id = url.split('/')[-2]
+        return int(tut_id)
+    else:
+        return None
