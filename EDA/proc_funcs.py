@@ -1,4 +1,5 @@
 import json
+import numpy
 
 def get_ids(url):
     if url.split('/')[-2]:
@@ -50,7 +51,7 @@ def get_num_subjects(sub_list):
     return len(json.loads(sub_list.replace("'",'"')))
 
 def get_hours_day(day):
-    hours = np.array(day.replace('[','').replace(']','').replace(' ','').split(','))
+    hours = numpy.array(day.replace('[','').replace(']','').replace(' ','').split(','))
     return float(len(hours[hours=='True'])/24)   
     
 def get_back_date(date):
