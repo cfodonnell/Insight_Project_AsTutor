@@ -111,3 +111,4 @@ venv.bak/
 dmypy.json
 
 sql_id.txt
+scrape_all.py
