@@ -1,4 +1,9 @@
 # To install these Python dependencies, please type:
 # pip install -r requirements.txt
 
-streamlit
+pandas
+numpy
+sklearn
+categoryencoders
+xgboost
+import psycopg2
