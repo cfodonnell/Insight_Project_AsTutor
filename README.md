@@ -10,7 +10,7 @@ I decided to create AsTutor, a data tool which allows prospectively tutors to ef
 
 ##Data Acquistion
 
-![](Callum_ODonnell_Week4.png)
+![](images/Callum_ODonnell_Week4.png)
 
 The pipeline for development of the app is shown below.
 I scraped the profiles of 20,000 private tutors from the popular website Wyzant, using Selenium and Beautiful soup. I attempted to get wide geographical and topical spread of profiles by using randomized zip codes and unrelated subjects as search terms in the scraping script.
