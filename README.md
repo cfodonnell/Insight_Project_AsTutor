@@ -43,12 +43,32 @@ There was also a large geographical variation in average tutor rates, with darke
 
 ![](images/map.png)
 
-Since there was clearly a lot of information to be gleaned from the bio, education, and subject list sections, I applied NLP methods to generate new features from these parts of the profile. I applied a TFIDF vectorizer to each section, which encoded the text as a numerical matrix. The matrix was reduced to 5 columns per section using PCA.
+Since there was clearly a lot of information to be gleaned from the bio, education, and subject list sections, I applied NLP methods to generate new features from these parts of the profile. I applied a TFIDF vectorizer to each section, which encoded the text as a numerical matrix. The matrix was reduced to 5 columns per section using PCA. Furthermore, other useful features, such as years of experience could be extracted by keyword matching. Subsequently, the new feature list included:
+* TFIDF + PCA of tutor bio (5)
+* TFIDF + PCA of education (5)
+* TFIDF + PCA of subject list (5)
+* Bio length in words
+* Highest level of qualification
+* Total years of experience tutoring
+* If the tutor attended an ivy league school
+* Mean tutor rate in their state (using catboost encoding to avoid data leakage https://catboost.ai/docs/)
 
 ## Model
 
-After trialling several algorithms, I settled on xgboost as it provided the lowest mean absolute error, highest R2 value, and was relatively fast to run and optimize.
+After trialling several algorithms, I settled on xgboost as it provided the lowest mean absolute error, highest R2 value, and was relatively fast to run and optimize. Below is the performance of xgboost with the original feature list (left) and the updated feature list (right). With the new engineered features, the R2 increases from 0.17 to 0.22, while the mean absolute percentage error (MAPE) decreases from 10.3% to 6.7%. 
 
 ![](images/model_comparison.png)
 
+The informative nature of the engineered features is evident when extracting feature importances from the xgboost algorithm: it can be seen that they account for 8 of the top 10.
 
+![](images/feat_importance.png)
+
+For comparison, the performance of some alternative popular machine learning models is shown in the table below.
+
+| Model        | MAE ($/hour)           | R2  |
+| ------------- |:-------------:| -----:|
+| Linear Regression      | 13.7 | 0.15 |
+| Lasso Regression      | 13.6      |   0.16 |
+| Ridge Regression | 13.7      |   0.15 |
+| Random Forest | 13.4      |   0.20 |
+| XGBoost | 13.3      |   0.22 |
