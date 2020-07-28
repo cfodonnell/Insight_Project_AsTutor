@@ -88,3 +88,11 @@ data_cleaning.ipynb
 wyzant_scratch.ipynb
 data
 tests
+Insight_Project_Framework
+model_base_data.sav
+cb_encoding.sav
+model_xgb.sav
+kmeans_14.sav
+kmeans_16.sav
+model_xgb2.sav
+tutors_outliers.pkl

@@ -2,6 +2,8 @@
 
 Be astuter with your private tutition rate.
 
+Enjoy the app at www.datamystic.xyz/input !
+
 There are more than 1 million private tutors working in the USA as of 2020. Due to the explosion in tutoring websites (e.g. tutors.com, wyzant.com), the private tutoring market is projected to be worth almost $200 billion by 2026. 
 With so much competition, aspiring tutors can find it challenging and intimidating to stand out from others.
 One common source of uncertainty, that I have personally struggled with in the past, is choosing an hourly rate which is both suited to your qualifications and experience, while also not deterring potential customers from selecting you.
