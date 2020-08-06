@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -63,10 +64,23 @@ def get_top_keywords(data, clusters, labels, n_terms):
         print('\nCluster {}'.format(i))
         print(','.join([labels[t] for t in np.argsort(r)[-n_terms:]]))
         
-def subj_rank(subj):
+def subj_rank(subj, subj_pop):
     '''Returns an array of subjects, ranked by popularity'''
 
     if subj in subj_pop['subjects_lower'].values:
         return np.where(subj_pop['subjects_lower'].values == subj)[0][0]
     else:
         return 0
+
+def real_subs(subj, subj_pop):
+    '''Filters out phrases which are not exact matches with a subject name (e.g. last word in one subject
+    followed by first word in different unrelated subject.'''
+    
+    if subj in subj_pop['subjects_lower'].values:
+        idx = np.where(subj_pop['subjects_lower'].values == subj)[0][0]
+        if subj_pop['hours_tutoring'].iloc[idx] >200000:
+            return subj_pop['subjects'].iloc[idx]
+        else:
+            return ''
+    else:
+        return ''
