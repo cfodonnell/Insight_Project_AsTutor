@@ -1,0 +1,3 @@
+## Models
+
+`model_fitting.ipynb` is the primary notebook for fitting the regression model to predict tutor hourly rate. `subjects_clustering.ipynb` is the primary notebook for exploring similarities between tutors based on their listed subjects, and assembling the subject recommendation table. `feat_eng_funcs.py` contains a few auxiliary functions for feature engineering (such as TFIDF encoding). `cluster_funcs.py` contains functions necessary for visualizing clustered data and assigning new users to a cluster. `sql_funcs.py` contains the functions for opening a database connection and storing data. `weights` contains the model weights for the regression model, categorical encodings, TFIDF, PCA, and k-means models respectively.
