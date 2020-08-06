@@ -16,7 +16,7 @@ There are more than 1 million private tutors working in the USA as of 2020. Due 
 With so much competition, aspiring tutors can find it challenging and intimidating to stand out from others.
 One common source of uncertainty, that I have personally struggled with in the past, is choosing an hourly rate which is both suited to your qualifications and experience, while also not deterring potential customers from selecting you.
 Doing a quick google search usually returns some blog posts, which contain detailed and overcomplicated rules for manually calculating your suggested rate. Often they include guesswork on your part anyway (such as adjustments for rare or high demand subjects), so they aren't very informative. 
-I decided to create AsTutor, a data tool which allows prospectively tutors to efficiently find a reliable estimate of their true market worth.
+I decided to create AsTutor, a data tool which helps prospective tutors to efficiently find a reliable estimate of their true market worth.
 
 ## Data Acquistion
 
