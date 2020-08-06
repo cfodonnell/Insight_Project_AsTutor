@@ -1,8 +1,16 @@
-## AsTutor
+# AsTutor
 
 Be astuter with your private tutition rate.
 
-Enjoy the app at www.datamystic.xyz/input !
+Enjoy the app at www.datamystic.xyz/input ! Answer the short questionnaire, enter your qualifications, and find how much you could earn as a private tutor.
+
+## Contents
+
+* `data_collect_and_clean` contains all scripts for data acquisition and cleaning (see readme inside folder for more details).
+* `Models` contains scripts and notebooks for the regression and clustering models described in the text below (see readme inside folder for more details).
+* `astutor_flask` contains all files and scripts for running the flask web app.
+
+## Motivation
 
 There are more than 1 million private tutors working in the USA as of 2020. Due to the explosion in tutoring websites (e.g. tutors.com, wyzant.com), the private tutoring market is projected to be worth almost $200 billion by 2026. 
 With so much competition, aspiring tutors can find it challenging and intimidating to stand out from others.
@@ -55,7 +63,7 @@ Since there was clearly a lot of information to be gleaned from the bio, educati
 * If the tutor attended an ivy league school
 * Mean tutor rate in their state (using catboost encoding to avoid data leakage https://catboost.ai/docs/)
 
-## Model
+## Regression model
 
 After trialling several algorithms, I settled on xgboost as it provided the lowest mean absolute error, highest R2 value, and was relatively fast to run and optimize. Below is the performance of xgboost with the original feature list (left) and the updated feature list (right). With the new engineered features, the R2 increases from 0.17 to 0.22, while the mean absolute percentage error (MAPE) decreases from 10.3% to 6.7%. 
 
@@ -74,3 +82,20 @@ For comparison, the performance of some alternative popular machine learning mod
 | Ridge Regression | 13.7      |   0.15 |
 | Random Forest | 13.4      |   0.20 |
 | XGBoost | 13.3      |   0.22 |
+
+## Subject clustering
+
+As seen in the feature importances chart, a tutor's list of subjects represents one of the most influencial factors in determining their predicted hourly rate. This is something that a tutor can easily take action on, so it would be useful for them to know if teaching certain subjects could merit charging a higher rate. However, it is important to only recommend subjects which fall within the expertise of that particular tutor, so a tailored recommendation is required for each user.
+After TFIDF vectorization and PCA reduction, clusters of similar types of tutor could be visualized (see TSNE plot below). By extracting the most common subjects associated with each cluster, it becomes clear which tutors are more specialized in fields such as language, science and finance, for example. 
+
+![](images/tsne28.png)
+
+
+When users fill in their list of chosen subjects, the app assigns new users to a cluster using the k-means model. Any subject not listed by that user, but which is the top 10 list of recommended subjects for that cluster, is then suggested to the tutor on the result page.
+
+
+
+## How does the app help?
+
+Currently, an aspiring tutor has limited options for determining a reasonable value for their hourly rate. Blog posts and job websites (such as payscale.com) are very limited in their scope, and do not consider important factors such as geographical variation in subject demand. AsTutor will prevent tutors from consistently underrating their own qualifications (for example, I discovered that my own creditials merited a rate of $40 /hour as opposed to the $30 / hour I had charged in the past). 
+The effectiveness of the subject recommender was assessed by calculating the difference in predicted hourly rate when using the tutor's original set of subjects, and when including their new recommended subjects, for a test dataset of 3000 held-out profiles. It was found that adding the new subjects to a tutor's profile increased their predicted hourly rate by $2.3 / hour on average. This suggests that the app gives consistently valuable advice. 
