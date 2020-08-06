@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>AsTutor Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <<link href="../static/css/starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+<br><br>
+    <main role="main" class="container">
+
+      <!--<div class="starter-template">
+        <h2>AsTutor</h2>
+        <p>Because you're worth it.</p>
+    </div>-->
+    
+
+    <div class = "container" align = "center">
+
+      <form  action="/output" method="GET">
+
+        <div>
+          <h2 style = "color:DarkGreen">Your suggested rate is ${{the_result}}/hour</h2>
+        </div>
+        
+        <p style = "font-size:150%">{{text_1}}</p>
+        <h2 style = "color:DarkGreen"> {{missing_subs}}</h2>
+        <p style = "font-size:150%">{{text_2}}</p>
+        <h2 style = "color:DarkGreen"> {{the_result_new}}<h2>
+      </form>
+        
+      <form  action="/input" method="GET">
+        <div>
+          <button type="submit" class="btn btn-default btn-lg">Get a new suggestion!</button>
+        </div>
+
+      </form>
+      <a href="https://www.instagram.com/stevenfritters/">
+      <img src="static/image1.jpeg" alt="" class = "center" style="width:500px;height:500px;">
+      </a>
+      
+      <h2>Congratulations for making the AsTutor choice!</h2>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+      
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -6,4 +6,5 @@ numpy
 sklearn
 categoryencoders
 xgboost
-import psycopg2
+psycopg2
+flask

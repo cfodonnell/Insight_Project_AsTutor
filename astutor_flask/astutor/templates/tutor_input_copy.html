@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>AsTutor Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+     <!--<link href="../static/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <!--<link href="../static/css/starter-template.css" rel="stylesheet">-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+<br><br>
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h2>AsTutor</h2>
+        <p>Because you're worth it.</p>
+    </div>
+
+    <div class = "container">
+
+      <form  action="/output" method="POST">
+         <div class="form-group">
+          <label for="tutor_exp">How many years of teaching/tutoring experience do you have?</label>
+          <input type="text" id="tutor_exp" name='tutor_exp' placeholder="Enter a number ">
+        </div>
+	<div class="form-group">
+          <label for="tutor_exp">Approximately how many hours have you tutored in the last year?</label>
+          <input type="text" id="tutor_hours" name='tutor_hours' placeholder="Enter a number ">
+        </div>
+	<br>
+	
+	<!--<div class="input" required>
+          <label for="tutor_back_yes">Do you have an approved federal background check?</label><br>
+          <input type="radio" name='tutor_back' value='on' required='required'>Yes<br>
+          <input type="radio" name='tutor_back' value='off'>No<br>
+        </div>
+         <br>-->
+        
+        <p>What does your schedule look like? How many hours each day are you available to teach?</p>
+        <div class="form-group">
+          <label for="tutor_hours">Monday:</label>
+          <input type="text" id="monday_hours" name='monday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Tuesday:</label>
+          <input type="text" id="tuesday_hours" name='tuesday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Wednesday:</label>
+          <input type="text" id="wednesday_hours" name='wednesday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Thursday:</label>
+          <input type="text" id="thursday_hours" name='thursday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Friday:</label>
+          <input type="text" id="friday_hours" name='friday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Saturday:</label>
+          <input type="text" id="saturday_hours" name='saturday_hours' placeholder="Enter a number">
+          <label for="tutor_hours">Sunday:</label>
+          <input type="text" id="sunday_hours" name='sunday_hours' placeholder="Enter a number">
+        </div>
+        <table class="table table-hover">
+      <tr><th>Degree</th><th>Institution</th><th>
+      <tr><td> <div class="form-group"><select id="tutor_deg1" name = "tutor_deg1">
+      <option value="None"></option>
+      <option value="Bachelors">Bachelors</option>
+	<option value="Masters">Masters</option>
+	<option value="MD">MD</option>
+	<option value="MBA">MBA</option>
+	<option value="PhD">PhD</option>
+	<option value="J.D.">J.D.</option></select></div></td>
+      <td><input type="text" id="inst1" name='inst1' placeholder="e.g. University of Tutorville"></td></tr>
+      <tr><td> <div class="form-group"><select id="tutor_deg2" name = "tutor_deg2">
+      <option value="None"></option>
+      <option value="Bachelors">Bachelors</option>
+	<option value="Masters">Masters</option>
+	<option value="MD">MD</option>
+	<option value="MBA">MBA</option>
+	<option value="PhD">PhD</option>
+	<option value="J.D.">J.D.</option></select></div></td>
+      <td><input type="text" id="inst2" name='inst2'></td></tr>
+      <tr><td> <div class="form-group"><select id="tutor_deg3" name = "tutor_deg3">
+      <option value="None"></option>
+      <option value="Bachelors">Bachelors</option>
+	<option value="Masters">Masters</option>
+	<option value="MD">MD</option>
+	<option value="MBA">MBA</option>
+	<option value="PhD">PhD</option>
+	<option value="J.D.">J.D.</option></select></div></td>
+      <td><input type="text" id="inst3" name='inst3'></td></tr>
+      </table>
+      
+	<div class="form-group">
+          <label for="tutor_loc">Where do you plan to teach? Enter a state abbreviation.</label>
+          <input type="text" id="tutor_loc" name='tutor_loc' placeholder="Enter a state, e.g TX">
+        </div>
+        
+        <div class="form-group">
+<select id="science" name = "science" multiple="multiple">
+	
+	<option value="ACT Science">ACT Science</option>
+<option value="Anatomy">Anatomy</option>
+<option value="Anthropology">Anthropology</option>
+<option value="Archaeology">Archaeology</option>
+<option value="Architecture">Architecture</option>
+<option value="Astronomy">Astronomy</option>
+<option value="Biochemistry">Biochemistry</option>
+<option value="Biology">Biology</option>
+<option value="Biostatistics">Biostatistics</option>
+<option value="Botany">Botany</option>
+<option value="Chemical Engineering">Chemical Engineering</option>
+<option value="Chemistry">Chemistry</option>
+<option value="Civil Engineering">Civil Engineering</option>
+<option value="Dentistry">Dentistry</option>
+<option value="Ecology">Ecology</option>
+<option value="Electrical Engineering">Electrical Engineering</option>
+<option value="Epidemiology">Epidemiology</option>
+<option value="Genetics">Genetics</option>
+<option value="Geology">Geology</option>
+<option value="Linguistics">Linguistics</option>
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+<option value="Microbiology">Microbiology</option>
+<option value="Nursing">Nursing</option>
+<option value="Nutrition">Nutrition</option>
+<option value="Organic Chemistry">Organic Chemistry</option>
+<option value="Pharmacology">Pharmacology</option>
+<option value="Physical Science">Physical Science</option>
+<option value="Physics">Physics</option>
+<option value="Physiology">Physiology</option>
+<option value="Psychology">Psychology</option>
+<option value="Zoology">Zoology</option>
+	
+	</select>
+	</div>
+	
+        
+        <div>
+          <button type="submit" class="btn btn-default btn-lg">Find your rate!</button>
+        </div>
+
+      
+	
+	<br>
+	
+	
+	<div class="form-group">
+      <select id="math" name = "math" multiple="multiple">
+          <option value="ACT Math">ACT Math</option>
+<option value="Algebra 1">Algebra 1</option>
+<option value="Algebra 2">Algebra 2</option>
+<option value="Calculus">Calculus</option>
+<option value="Differential Equations">Differential Equations</option>
+<option value="Discrete Math">Discrete Math</option>
+<option value="Elementary Math">Elementary Math</option>
+<option value="Finite Math">Finite Math</option>
+<option value="Geometry">Geometry</option>
+<option value="Linear Algebra">Linear Algebra</option>
+<option value="Logic">Logic</option>
+<option value="Prealgebra">Prealgebra</option>
+<option value="Precalculus">Precalculus</option>
+<option value="Probability">Probability</option>
+<option value="SAT Math">SAT Math</option>
+<option value="Statistics">Statistics</option>
+<option value="Trigonometry">Trigonometry</option>
+	</select>
+	</div>
+	
+	<br>
+	<div class="form-group">
+	<select id="arts-music" name="arts-music" multiple="multiple">
+<option value="Art Theory">Art Theory</option>
+<option value="Ballet">Ballet</option>
+<option value="Ballroom Dancing">Ballroom Dancing</option>
+<option value="Cello">Cello</option>
+<option value="Clarinet">Clarinet</option>
+<option value="Composition (Music)">Composition (Music)</option>
+<option value="Drawing">Drawing</option>
+<option value="Drums">Drums</option>
+<option value="Ear Training">Ear Training</option>
+<option value="Film">Film</option>
+<option value="Flute">Flute</option>
+<option value="General Music">General Music</option>
+<option value="Graphic Design">Graphic Design</option>
+<option value="Guitar">Guitar</option>
+<option value="Harp">Harp</option>
+<option value="Music Production">Music Production</option>
+<option value="Music Theory">Music Theory</option>
+<option value="Oboe">Oboe</option>
+<option value="Painting">Painting</option>
+<option value="Photography">Photography</option>
+<option value="Piano">Piano</option>
+<option value="Salsa Dancing">Salsa Dancing</option>
+<option value="Saxophone">Saxophone</option>
+<option value="Sight Singing">Sight Singing</option>
+<option value="Songwriting">Songwriting</option>
+<option value="Tango">Tango</option>
+<option value="Theater">Theater</option>
+<option value="Trombone">Trombone</option>
+<option value="Trumpet">Trumpet</option>
+<option value="Video Production">Video Production</option>
+<option value="Violin">Violin</option>
+<option value="Voice (Music)">Voice (Music)</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="finance-business-law" name="finance-business-law" multiple="multiple">
+<option value="Actuarial Science">Actuarial Science</option>
+<option value="Bar Exam">Bar Exam</option>
+<option value="Business">Business</option>
+<option value="Criminal Justice">Criminal Justice</option>
+<option value="Econometrics">Econometrics</option>
+<option value="Finance">Finance</option>
+<option value="Financial Accounting">Financial Accounting</option>
+<option value="Law">Law</option>
+<option value="Macroeconomics">Macroeconomics</option>
+<option value="Managerial Accounting">Managerial Accounting</option>
+<option value="Marketing">Marketing</option>
+<option value="Microeconomics">Microeconomics</option>
+<option value="Project Management">Project Management</option>
+<option value="Tax Accounting">Tax Accounting</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="english" name="english" multiple="multiple">
+<option value="ACT English">ACT English</option>
+<option value="ACT Reading">ACT Reading</option>
+<option value="Classics">Classics</option>
+<option value="English">English</option>
+<option value="Grammar">Grammar</option>
+<option value="Literature">Literature</option>
+<option value="Phonics">Phonics</option>
+<option value="Proofreading">Proofreading</option>
+<option value="Reading">Reading</option>
+<option value="SAT Reading">SAT Reading</option>
+<option value="SAT Writing">SAT Writing</option>
+<option value="Spelling">Spelling</option>
+<option value="Vocabulary">Vocabulary</option>
+<option value="Writing">Writing</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="social-humanities" name="social-humanities" multiple="multiple">
+<option value="American History">American History</option>
+<option value="Art History">Art History</option>
+<option value="Bible Studies">Bible Studies</option>
+<option value="European History">European History</option>
+<option value="Geography">Geography</option>
+<option value="Government & Politics">Government & Politics</option>
+<option value="Music History">Music History</option>
+<option value="Philosophy">Philosophy</option>
+<option value="Political Science">Political Science</option>
+<option value="Religion">Religion</option>
+<option value="Social Studies">Social Studies</option>
+<option value="Sociology">Sociology</option>
+<option value="World History">World History</option>
+</select>
+
+<br>
+<div class="form-group">
+<select id="sport" name="sport" multiple="multiple">
+<option value="Baseball">Baseball</option>
+<option value="Basketball">Basketball</option>
+<option value="Bodybuilding">Bodybuilding</option>
+<option value="Fitness">Fitness</option>
+<option value="Football">Football</option>
+<option value="Golf">Golf</option>
+<option value="Lacrosse">Lacrosse</option>
+<option value="Martial Arts">Martial Arts</option>
+<option value="Soccer">Soccer</option>
+<option value="Softball">Softball</option>
+<option value="Swimming">Swimming</option>
+<option value="Table Tennis">Table Tennis</option>
+<option value="Tennis">Tennis</option>
+<option value="Track & Field">Track & Field</option>
+<option value="Volleyball">Volleyball</option>
+<option value="Water Polo">Water Polo</option>
+<option value="Yoga">Yoga</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="language" name="language" multiple="multiple">
+<option value="Arabic">Arabic</option>
+<option value="Braille">Braille</option>
+<option value="Bulgarian">Bulgarian</option>
+<option value="Chinese">Chinese</option>
+<option value="Czech">Czech</option>
+<option value="Dutch">Dutch</option>
+<option value="ESL/ESOL">ESL/ESOL</option>
+<option value="Farsi">Farsi</option>
+<option value="French">French</option>
+<option value="French Horn">French Horn</option>
+<option value="German">German</option>
+<option value="Greek">Greek</option>
+<option value="Hebrew">Hebrew</option>
+<option value="Hindi">Hindi</option>
+<option value="Hungarian">Hungarian</option>
+<option value="Indonesian">Indonesian</option>
+<option value="Italian">Italian</option>
+<option value="Japanese">Japanese</option>
+<option value="Korean">Korean</option>
+<option value="Latin">Latin</option>
+<option value="Polish">Polish</option>
+<option value="Portuguese">Portuguese</option>
+<option value="Romanian">Romanian</option>
+<option value="Russian">Russian</option>
+<option value="Sign Language">Sign Language</option>
+<option value="Spanish">Spanish</option>
+<option value="Speech">Speech</option>
+<option value="TOEFL">TOEFL</option>
+<option value="Thai">Thai</option>
+<option value="Turkish">Turkish</option>
+<option value="Urdu">Urdu</option>
+<option value="Vietnamese">Vietnamese</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="computer" name="computer" multiple="multiple">
+<option value="ASP.NET">ASP.NET</option>
+<option value="Accuplacer">Accuplacer</option>
+<option value="Adobe Flash">Adobe Flash</option>
+<option value="Adobe Illustrator">Adobe Illustrator</option>
+<option value="Adobe InDesign">Adobe InDesign</option>
+<option value="Adobe Lightroom">Adobe Lightroom</option>
+<option value="Adobe Photoshop">Adobe Photoshop</option>
+<option value="Angular">Angular</option>
+<option value="Animation">Animation</option>
+<option value="AutoCAD">AutoCAD</option>
+<option value="Autodesk Maya">Autodesk Maya</option>
+<option value="C">C</option>
+<option value="C#">C#</option>
+<option value="C++">C++</option>
+<option value="COBOL">COBOL</option>
+<option value="CSS">CSS</option>
+<option value="Computer Engineering">Computer Engineering</option>
+<option value="Computer Programming">Computer Programming</option>
+<option value="Computer Science">Computer Science</option>
+<option value="DOS">DOS</option>
+<option value="Desktop Publishing">Desktop Publishing</option>
+<option value="Dreamweaver">Dreamweaver</option>
+<option value="Fortran">Fortran</option>
+<option value="GIS">GIS</option>
+<option value="General Computer">General Computer</option>
+<option value="HTML">HTML</option>
+<option value="JQuery">JQuery</option>
+<option value="Java">Java</option>
+<option value="JavaScript">JavaScript</option>
+<option value="Linux">Linux</option>
+<option value="MATLAB">MATLAB</option>
+<option value="Macintosh">Macintosh</option>
+<option value="Mathematica">Mathematica</option>
+<option value="Medical Coding">Medical Coding</option>
+<option value="Microsoft Access">Microsoft Access</option>
+<option value="Microsoft Excel">Microsoft Excel</option>
+<option value="Microsoft Outlook">Microsoft Outlook</option>
+<option value="Microsoft PowerPoint">Microsoft PowerPoint</option>
+<option value="Microsoft Project">Microsoft Project</option>
+<option value="Microsoft Publisher">Microsoft Publisher</option>
+<option value="Microsoft Windows">Microsoft Windows</option>
+<option value="Microsoft Word">Microsoft Word</option>
+<option value="Networking (Computer)">Networking (Computer)</option>
+<option value="Oracle">Oracle</option>
+<option value="PHP">PHP</option>
+<option value="Pascal">Pascal</option>
+<option value="Perl">Perl</option>
+<option value="Python">Python</option>
+<option value="QuickBooks">QuickBooks</option>
+<option value="R">R</option>
+<option value="Revit">Revit</option>
+<option value="Ruby">Ruby</option>
+<option value="SAS">SAS</option>
+<option value="SPSS">SPSS</option>
+<option value="SQL">SQL</option>
+<option value="STATA">STATA</option>
+<option value="Sketchup">Sketchup</option>
+<option value="Solidworks">Solidworks</option>
+<option value="Swift">Swift</option>
+<option value="UNIX">UNIX</option>
+<option value="USCIS">USCIS</option>
+<option value="Visual Basic">Visual Basic</option>
+<option value="Web Design">Web Design</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="exam-qualification" name="exam-qualification" multiple="multiple">
+<option value="AFOQT">AFOQT</option>
+<option value="ASVAB">ASVAB</option>
+<option value="CBEST">CBEST</option>
+<option value="CFA">CFA</option>
+<option value="CLAST">CLAST</option>
+<option value="COOP/HSPT">COOP/HSPT</option>
+<option value="GED">GED</option>
+<option value="GMAT">GMAT</option>
+<option value="GRE">GRE</option>
+<option value="IELTS">IELTS</option>
+<option value="ISEE">ISEE</option>
+<option value="LSAT">LSAT</option>
+<option value="MCAT">MCAT</option>
+<option value="MCSA">MCSA</option>
+<option value="MTLE">MTLE</option>
+<option value="NCLEX">NCLEX</option>
+<option value="PSAT">PSAT</option>
+<option value="Praxis">Praxis</option>
+<option value="Regents">Regents</option>
+<option value="SOL">SOL</option>
+<option value="SSAT">SSAT</option>
+<option value="STAAR">STAAR</option>
+<option value="Series 3">Series 3</option>
+<option value="Series 6">Series 6</option>
+<option value="Series 63">Series 63</option>
+<option value="Series 65">Series 65</option>
+<option value="Series 66">Series 66</option>
+<option value="Series 7">Series 7</option>
+<option value="TAKS">TAKS</option>
+<option value="TEAS">TEAS</option>
+<option value="USMLE">USMLE</option>
+</select>
+</div>
+
+<br>
+<div class="form-group">
+<select id="general-other" name="general-other" multiple="multiple">
+<option value="ADHD">ADHD</option>
+<option value="Autism Spectrum Disorder (ASD)">Autism Spectrum Disorder (ASD)</option>
+<option value="Bridge">Bridge</option>
+<option value="Career Development">Career Development</option>
+<option value="Chess">Chess</option>
+<option value="College Counseling">College Counseling</option>
+<option value="Common Core">Common Core</option>
+<option value="Computer Gaming">Computer Gaming</option>
+<option value="Cooking">Cooking</option>
+<option value="Cosmetology">Cosmetology</option>
+<option value="Dyslexia">Dyslexia</option>
+<option value="Elementary (K-6th)">Elementary (K-6th)</option>
+<option value="Handwriting">Handwriting</option>
+<option value="Hard of Hearing">Hard of Hearing</option>
+<option value="Homeschool">Homeschool</option>
+<option value="Needlework">Needlework</option>
+<option value="Poker">Poker</option>
+<option value="Public Speaking">Public Speaking</option>
+<option value="Sewing">Sewing</option>
+<option value="Social Work">Social Work</option>
+<option value="Special Needs">Special Needs</option>
+<option value="Study Skills">Study Skills</option>
+</select>
+</div>
+</form>
+        
+        <br>
+      
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <!-- <script src="static/js/bootstrap.min.js"></script> -->
+      
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <!-- Include Twitter Bootstrap and jQuery: -->
+    <!-- <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css"/> -->
+    <!-- <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css"/> -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/css/bootstrap-multiselect.css"/>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap-multiselect.js"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#math').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#science').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#english').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#computer').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#finance-business-law').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#arts-music').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#general-other').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#exam-qualification').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#language').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#social-humanities').multiselect();
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#sport').multiselect();
+    });
+    </script>
+    
+  </body>
+</html>

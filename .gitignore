@@ -97,7 +97,6 @@ model_base_data.sav
 model_xgb.sav
 model_xgb2.sav
 kmeans_14.sav
-kmeans_16.sav
 tutors_outliers.pkl
 
 wyzant_scrape_all.ipynb
