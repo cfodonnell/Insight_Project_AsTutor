@@ -86,12 +86,47 @@ For comparison, the performance of some alternative popular machine learning mod
 ## Subject clustering
 
 As seen in the feature importances chart, a tutor's list of subjects represents one of the most influencial factors in determining their predicted hourly rate. This is something that a tutor can easily take action on, so it would be useful for them to know if teaching certain subjects could merit charging a higher rate. However, it is important to only recommend subjects which fall within the expertise of that particular tutor, so a tailored recommendation is required for each user.
-After TFIDF vectorization and PCA reduction, clusters of similar types of tutor could be visualized (see TSNE plot below). By extracting the most common subjects associated with each cluster, it becomes clear which tutors are more specialized in fields such as language, science and finance, for example. 
+After TFIDF vectorization and TSNE reduction, clusters of similar types of tutor could be identified using a DBSCAN algorithm. By extracting the most common subjects associated with each cluster, it becomes clear which tutors are more specialized in fields such as language, science and finance, for example. 
 
-![](images/tsne28.png)
+![](images/dbscan.png)
 
 
-When users fill in their list of chosen subjects, the app assigns new users to a cluster using the k-means model. Any subject not listed by that user, but which is the top 10 list of recommended subjects for that cluster, is then suggested to the tutor on the result page.
+| Cluster | Tutor focus area(s) |
+| ------- |:------------:|
+| 0 | Calculus and differential equations |
+| 1 | English literature and proofreading |
+| 2 | English vocabulary, english as a 2nd language |
+| 3 | Business and accounting |
+| 4 | Chemistry and biology |
+| 5 | Microsoft office |
+| 6 | Algebra and geometry |
+| 7 | Elementary math and science |
+| 8 | English as 2nd language (spanish speaking) |
+| 9 | MCAT and sciences |
+| 10 | Graphic design, Adobe software |
+| 11 | Special needs, autism |
+| 12 | Elementary algebra and geometry |
+| 13 | Elementary math, reading and spelling |
+| 14 | Web design |
+| 15 | Statistics and programming |
+| 16 | Counselling and public speaking |
+| 17 | Music theory |
+| 18 | Photography and film |
+| 19 | Finance and economics |
+| 20 | Physical sciences |
+| 21 | Elementary math and common core |
+| 22 | Grammar, reading and writing |
+| 23 | Spanish, French and Italian |
+| 24 | Computer science |
+  25 | Economics and math |
+| 26 | English as 2nd language (spanish speaking) |
+| 27 | Algebra and linear algebra |
+| 28 | Study skills |
+| 29 | Advanced writing and grammar |
+| 30 | High school biology |
+| 31 | English grammar and vocabulary |
+
+When users fill in their list of chosen subjects, the app assigns new users to a cluster using the clustering model. Any subject not listed by that user, but which is the top 10 list of recommended subjects for that cluster, is then suggested to the tutor on the result page.
 
 
 
